@@ -16,6 +16,6 @@ use Symfony\Component\Routing\Annotation\Route;
   public function index(): Response{
      /*envoie une réponse générée à partir d'un modèle Twig. Le modèle Twig home.html.twig sera 
     utilisé pour générer la réponse HTML retournée au client. RENDEL prend en charge la gestion des vue */
-    return $this->render('home.html.twig');
+    return $this->render('pages/home.html.twig');
   }   
 }

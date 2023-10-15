@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes ingredients!{% endblock %}
+
+{% block body %}
+      <div class="container mt-4">
+             <h1>Mes Ingredients</h1>
+            <table class="table table-hover">
+                  <thead>
+                             <tr>
+                                  <th scope="col">Numero</th>
+                                  <th scope="col">Nom</th>
+                                  <th scope="col">Prix</th>
+                                  <th scope="col">Date de création</th>
+                             </tr>
+                  </thead>
+                  <tbody>
+                        {% for ingredient in ingredients %}
+                            <tr class='primary'>
+                                  <th scope="row">{{ingredient.id}}</th>
+                                  <td>{{ingredient.name}}</td>
+                                  <td>{{ingredient.prix}}</td>
+                                  {# |date('dd/mm/yyyy'cad on a filtré l'annéé dans twig filtre #}
+                                  <td>{{ ingredient.createdAt|date("d/M/Y") }}</td>
+
+                            </tr>
+                        {% endfor %}
+                  </tbody>
+           </table>
+      </div>
+{% endblock %}
